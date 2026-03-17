@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include <math.h>
 
+/*
+1. Lab question from last week
+2. Stream cleaning, comments (ctrl shift c and x)
+3. HW questions
+4. Teach loops progressively according to lab sheet
+5. Mark
+*/
+
 // hw1
 int main(void){
     int num = 1;

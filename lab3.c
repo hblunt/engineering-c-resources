@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-
 // q1
 
 int main(void){
