@@ -32,7 +32,7 @@ int main(void){
 // hw2
 
 int main(void){
-    for(int i = 0; i < 11; i++){
+    for(int i = 0; i <= 20; i++){
         num = pow(2, i)
         printf("%d\n", num);
     }
