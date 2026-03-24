@@ -9,9 +9,16 @@
 int main(void){
     printf("Enter an integer: ");
     int num;
-    int count = -1;
+    int prev = -1;
+    int count = 0;
     do {
         scanf("%d", &num);
+        if (num == prev){
+            count++;
+            printf("You can't enter the same number twice!\n");
+            break;
+        }
+        prev = num;
         count++;
     } while(num != 0);
     printf("You entered %d numbers", count);
@@ -22,11 +29,13 @@ int main(void){
 
 // q2
 
+// i * ? = num
+
 int main(void){
     printf("Enter an integer: ");
     int num;
     scanf("%d", &num);
-    for (int i = 2; i<=sqrt(num); i++){
+    for (int i = 1; i<=sqrt(num); i++){
         if(num % i == 0){
             printf("%d ", i);
             if (i != num/i){
@@ -42,18 +51,24 @@ int main(void){
 int main(void){
     srand(time(NULL));
     int secret = rand() % 100 + 1;
+    int attempts = 0;
     printf("Guess the number between 1-100: ");
     int num;
     do {
         scanf("%d", &num);
-        if(num == secret){
-            printf("Correct!");
+        if(attempts == 10){
+            printf("Ran out of attempts.");
+        }
+        else if(num == secret){
+            printf("Correct! You took %d attempts", attempts);
         }
         else if (num < secret){
             printf("Higher\n");
+            attempts++;
         }
-        else (num > secret){
+        else {
             printf("Lower\n");
+            attempts++;
         }
     } while (num != secret);
 
@@ -77,7 +92,9 @@ int main(void){
         }
         else if(text >= 'a' && text <= 'z'){
             lower++;
+            text = text - 32;
         }
+        printf("%c", text);
     } while(text != '\n');
     printf("Your string featured %d digits, %d upper case letters, and %d lower case letters",  digits, upper, lower);
 
