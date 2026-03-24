@@ -32,8 +32,6 @@ int is_vowel(char c){
     else {
         return 0;
     }
-
-    return 0;
 }
 
 // hw3
@@ -46,8 +44,6 @@ int is_lower(char c){
     else {
         return 0;
     }
-
-    return 0;
 }
 
 // hw4
@@ -57,10 +53,11 @@ float power(float a, int b);
 // hw5
 
 float power(float a, int b){
+    float res = 1;
     for(int i = 0; i < b; i++){
-        a *= a;
+        res *= a;
     }
-    return a;
+    return res;
 }
 
 void display_dollar(float num){
