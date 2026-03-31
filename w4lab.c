@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
+
 double compute_cap_reactance(double cap, double freq);
 float compute_sphere_volume(float radius);
 
@@ -14,7 +15,10 @@ int main(void){
 
 // q1
 
+// add a check for negative radius
+
 float compute_sphere_volume(float radius){
+    if (radius < 0) return 0.0;
     return (4.0/3.0)*M_PI*pow(radius, 3);
 }
 
@@ -36,6 +40,8 @@ double compute_cap_reactance(double cap, double freq){
 }
 
 // q3
+
+// only sum the even numbers
 
 int main3(void){
     int a, b;
